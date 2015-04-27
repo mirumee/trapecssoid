@@ -1,0 +1,27 @@
+include variables
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        title=title
+        link(rel='stylesheet', href='static/style.css')
+    body
+        div.container
+            div.row
+                div.col-xs-12
+                    h1 #{title}
+            div.row
+                div.col-xs-12
+                    each angle in angles
+                        each t in trapecssoidClasses
+                            each tClass in t
+                                div(class=trapecssoidClassPrefix)
+                                    div(class=[trapecssoidClassPrefix, angle, tClass].join('-'))
+                                        h3 TrapeCSSoid #{tClass} #{angle} degrees
+                                        p #{desc}
+                        each tClass in trapecssoidClasses.left
+                            each tClass2 in trapecssoidClasses.right
+                                div(class=trapecssoidClassPrefix)
+                                    div(class=[[trapecssoidClassPrefix, angle, tClass].join('-'), [trapecssoidClassPrefix, angle, tClass2].join('-')])
+                                        h3 TrapeCSSoid #{tClass2} #{angle} degrees
+                                        p #{desc}

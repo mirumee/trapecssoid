@@ -1,2 +1,2 @@
-# trapecssoid
+# TrapeCSSoid
 CSS-based trapezoid blocks

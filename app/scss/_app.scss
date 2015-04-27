@@ -1,0 +1,54 @@
+@import 'bootstrap-sass/assets/stylesheets/bootstrap';
+@import 'mathsass/dist/math';
+
+.trapecssoid {
+  margin-bottom: 30px;
+  margin-left: -300px;
+  margin-right: -300px;
+  overflow: hidden;
+  padding-left: 300px;
+  padding-right: 300px;
+}
+
+[class*=trapecssoid-] {
+  position: relative;
+  background: lightgrey;
+  padding: 30px 0;
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+  }
+}
+
+@each $angle in (30, 45, 60) {
+  $border-transparent-width: $angle*100px;
+  $border-visible-width: round($border-transparent-width/cot($angle*1deg));
+  .trapecssoid-#{$angle}-left-top:before {
+    border-right: $border-visible-width solid lightgrey;
+    border-bottom: $border-transparent-width solid transparent;
+    bottom: 0;
+    left: -$border-visible-width;
+  }
+
+  .trapecssoid-#{$angle}-left-bottom:before {
+    border-right: $border-visible-width solid lightgrey;
+    border-top: $border-transparent-width solid transparent;
+    top: 0;
+    left: -$border-visible-width;
+  }
+
+  .trapecssoid-#{$angle}-right-top:after {
+    border-left: $border-visible-width solid lightgrey;
+    border-bottom: $border-transparent-width solid transparent;
+    bottom: 0;
+    right: -$border-visible-width;
+  }
+
+  .trapecssoid-#{$angle}-right-bottom:after {
+    border-left: $border-visible-width solid lightgrey;
+    border-top: $border-transparent-width solid transparent;
+    top: 0;
+    right: -$border-visible-width;
+  }
+}
