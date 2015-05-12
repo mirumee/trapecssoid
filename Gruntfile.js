@@ -14,7 +14,7 @@ module.exports = function (grunt) {
     },
     sass: {
       options: {
-        includePaths: ['bower_components']
+        includePaths: ['bower_components', 'assets/scss']
       },
       dist: {
         files: {
@@ -34,7 +34,7 @@ module.exports = function (grunt) {
         tasks: ['jade']
       },
       sass: {
-        files: ['app/scss/**/*.scss'],
+        files: ['**/*.scss'],
         tasks: ['sass']
       }
     }
