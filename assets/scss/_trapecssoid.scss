@@ -1,0 +1,104 @@
+@mixin trapecssoid(
+  $top: false,
+  $right: false,
+  $bottom: false,
+  $left: false,
+  $angle: 0,
+  $color: transparent,
+  $color-hover: $color,
+  $child-selector: div,
+  $margin: 50px
+) {
+  $direction-to-border-map: (
+    top: bottom,
+    right: left,
+    bottom: top,
+    left: right
+  );
+  @if $top or $bottom {
+    margin: {
+      top: -$margin;
+      bottom: -$margin;
+    }
+    padding: {
+      top: $margin;
+      bottom: $margin;
+    }
+  }
+  @if $left or $right {
+    margin: {
+      left: -$margin;
+      right: -$margin;
+    }
+    padding: {
+      left: $margin;
+      right: $margin;
+    }
+  }
+  overflow: hidden;
+
+  > #{$child-selector} {
+    background: $color;
+    display: block;
+    position: relative;
+
+    &:hover {
+      background: $color-hover;
+      @if $left {
+        &:before {
+          border-right-color: $color-hover;
+        }
+      }
+      @if $right {
+        &:after {
+          border-left-color: $color-hover;
+        }
+      }
+    }
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+    }
+
+    $factor: 100px;
+    @if $top or $bottom {
+      $factor: $factor * 10;
+    }
+    $border-transparent-width: $angle*$factor;
+    $border-visible-width: round($border-transparent-width/cot($angle*1deg));
+
+    @if $top {
+      &:before {
+        border-bottom: $border-visible-width solid $color;
+        border-#{map_get($direction-to-border-map, $top)}: $border-transparent-width solid transparent;
+        #{map_get($direction-to-border-map, $top)}: 0;
+        top: -$border-visible-width;
+      }
+    }
+    @if $right {
+      &:after {
+        border-left: $border-visible-width solid $color;
+        border-#{map_get($direction-to-border-map, $right)}: $border-transparent-width solid transparent;
+        #{map_get($direction-to-border-map, $right)}: 0;
+        right: -$border-visible-width;
+      }
+    }
+    @if $bottom {
+      &:after {
+        border-top: $border-visible-width solid $color;
+        border-#{map_get($direction-to-border-map, $bottom)}: $border-transparent-width solid transparent;
+        #{map_get($direction-to-border-map, $bottom)}: 0;
+        bottom: -$border-visible-width;
+      }
+    }
+    @if $left {
+      &:before {
+        border-right: $border-visible-width solid $color;
+        border-#{map_get($direction-to-border-map, $left)}: $border-transparent-width solid transparent;
+        #{map_get($direction-to-border-map, $left)}: 0;
+        left: -$border-visible-width;
+      }
+    }
+  }
+}

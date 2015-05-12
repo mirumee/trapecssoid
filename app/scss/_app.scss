@@ -1,25 +1,8 @@
+$body-bg: #ECF0F1;
+
 @import 'bootstrap-sass/assets/stylesheets/bootstrap';
 @import 'mathsass/dist/math';
-
-.trapecssoid {
-  margin-bottom: 30px;
-  margin-left: -300px;
-  margin-right: -300px;
-  overflow: hidden;
-  padding-left: 300px;
-  padding-right: 300px;
-}
-
-[class*=trapecssoid-] {
-  position: relative;
-  background: lightgrey;
-  padding: 30px 0;
-
-  &:before, &:after {
-    content: '';
-    position: absolute;
-  }
-}
+@import 'trapecssoid';
 
 @each $angle in (30, 45, 60) {
   $border-transparent-width: $angle*100px;
@@ -51,4 +34,55 @@
     top: 0;
     right: -$border-visible-width;
   }
+}
+
+.menu {
+  @include list-unstyled;
+  margin-left: $grid-gutter-width/-2;
+
+  &-item {
+    float: left;
+    padding: $grid-gutter-width/2;
+    width: 33.33%;
+
+    $colors: (#3498DB, #9B59B6, #F39C12);
+    @each $color in $colors {
+      &-trapecssoid--#{index($colors, $color)} {
+        @include trapecssoid($left: top, $right: bottom, $angle: 30, $color: $color, $color-hover: darken($color, 10%), $child-selector: span);
+      }
+    }
+
+    a {
+      color: white;
+      font-size: $font-size-large;
+      display: block;
+      padding: $grid-gutter-width/2;
+      text-decoration: none;
+    }
+  }
+}
+
+.hero {
+  color: white;
+  text-align: justify;
+
+  &-in {
+    padding: $grid-gutter-width/3 $grid-gutter-width;
+  }
+}
+
+.hero-1 {
+  @include trapecssoid($top: left, $bottom: right, $angle: 2, $color: #34495E, $margin: 39px);
+}
+
+.hero-2 {
+  @include trapecssoid($top: left, $bottom: left, $angle: 2, $color: #8E44AD, $margin: 39px);
+}
+
+.hero-3 {
+  @include trapecssoid($top: right, $bottom: right, $angle: 2, $color: #2980B9, $margin: 39px);
+}
+
+.hero-4 {
+  @include trapecssoid($top: left, $bottom: right, $angle: 2, $color: #C0392B, $margin: 39px);
 }
