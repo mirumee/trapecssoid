@@ -3,25 +3,25 @@ doctype html
 html(lang='en')
     head
         meta(charset='UTF-8')
-        title=title
+        title=TrapeCSSoid demo
         link(rel='stylesheet', href='static/style.css')
     body
         div.container
             div.row
                 div.col-xs-12
-                    h1 #{title}
-            div.row
-                div.col-xs-12
-                    each angle in angles
-                        each t in trapecssoidClasses
-                            each tClass in t
-                                div(class=trapecssoidClassPrefix)
-                                    div(class=[trapecssoidClassPrefix, angle, tClass].join('-'))
-                                        h3 TrapeCSSoid #{tClass} #{angle} degrees
-                                        p #{desc}
-                        each tClass in trapecssoidClasses.left
-                            each tClass2 in trapecssoidClasses.right
-                                div(class=trapecssoidClassPrefix)
-                                    div(class=[[trapecssoidClassPrefix, angle, tClass].join('-'), [trapecssoidClassPrefix, angle, tClass2].join('-')])
-                                        h3 TrapeCSSoid #{tClass2} #{angle} degrees
-                                        p #{desc}
+                    h1 TrapeCSSoid demo
+                    ul.menu
+                        each i in [1, 2, 3]
+                            li.menu-item
+                                div(class='menu-item-trapecssoid--'+i)
+                                    span
+                                        a(href='#') Menu option #{i}
+                    each i in [1, 2, 3, 4]
+                        div(class=['hero', 'hero-'+i])
+                            div
+                                div.hero-in
+                                    h2 Yay! It works both ways ;)
+                                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada ultricies turpis in imperdiet. Integer tempus elit eu libero varius sagittis. Aenean eget elit ut sapien semper feugiat. Nullam in felis sit amet erat lacinia semper in et ex. Nullam non nisl ac est tempus finibus non et libero. Integer eu dui velit. Aenean ultrices diam sed magna lacinia laoreet. Nulla dolor purus, egestas sit amet felis vel, luctus porttitor turpis. Suspendisse fermentum est nec maximus ultricies. Duis quis magna non turpis euismod bibendum.
+                    br
+                    br
+                    br
