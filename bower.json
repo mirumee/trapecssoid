@@ -1,18 +1,32 @@
 {
   "name": "TrapeCSSoid",
-  "version": "0.0.0",
+  "description": "CSS-based trapezoid blocks",
+  "version": "0.1.0",
+  "main": [
+    "lib/scss/trapecssoid.scss"
+  ],
+  "license": "MIT",
+  "ignore": [
+    ".*",
+    "Gruntfile.js",
+    "demo",
+    "index.html",
+    "package.json",
+    "static"
+  ],
+  "keywords": [
+    "css",
+    "scss",
+    "shapes",
+    "triangles",
+    "trapezoids"
+  ],
+  "authors": [
+    "Mirumee Software"
+  ],
+  "homepage": "http://mirumee.github.io/trapecssoid/",
   "repository": {
     "type": "git",
     "url": "git://github.com/mirumee/trapecssoid.git"
-  },
-  "author": "Mirumee Software",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mirumee/trapecssoid/issues"
-  },
-  "homepage": "http://trapecssoid.mirumee.com/",
-  "devDependencies": {
-    "bootstrap-sass": "~3.3.4",
-    "mathsass": "~0.9.5"
   }
 }
