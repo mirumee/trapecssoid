@@ -8,17 +8,17 @@ module.exports = function (grunt) {
       },
       compile: {
         files: {
-          'index.html': ['app/jade/index.jade']
+          'index.html': ['demo/jade/index.jade']
         }
       }
     },
     sass: {
       options: {
-        includePaths: ['bower_components', 'assets/scss']
+        includePaths: ['bower_components', 'lib/scss']
       },
       dist: {
         files: {
-          'static/style.css': 'app/scss/style.scss'
+          'static/style.css': 'demo/scss/style.scss'
         }
       }
     },
@@ -30,11 +30,11 @@ module.exports = function (grunt) {
         spawn: false
       },
       jade: {
-        files: ['app/jade/**/*.jade'],
+        files: ['demo/jade/**/*.jade'],
         tasks: ['jade']
       },
       sass: {
-        files: ['**/*.scss'],
+        files: ['demo/**/*.scss', 'lib/**/*.scss'],
         tasks: ['sass']
       }
     }
