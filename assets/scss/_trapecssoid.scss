@@ -1,104 +1,60 @@
 @mixin trapecssoid(
-  $top: false,
-  $right: false,
-  $bottom: false,
-  $left: false,
+  $border: left,
+  $direction: top,
   $angle: 0,
   $color: transparent,
   $color-hover: $color,
   $child-selector: div,
-  $margin: 50px
+  $gap: 50px,
+  $second: false,
+  $child-background: true
 ) {
-  $direction-to-border-map: (
+  $border-to-pseudoelement: before;
+  @if $second {
+    $border-to-pseudoelement: after;
+  }
+  $border-and-direction-inverse-map: (
     top: bottom,
     right: left,
     bottom: top,
     left: right
   );
-  @if $top or $bottom {
-    margin: {
-      top: -$margin;
-      bottom: -$margin;
-    }
-    padding: {
-      top: $margin;
-      bottom: $margin;
-    }
-  }
-  @if $left or $right {
-    margin: {
-      left: -$margin;
-      right: -$margin;
-    }
-    padding: {
-      left: $margin;
-      right: $margin;
-    }
-  }
+  margin-#{$border}: -$gap;
   overflow: hidden;
+  padding-#{$border}: $gap;
 
   > #{$child-selector} {
-    background: $color;
+    @if $child-background {
+      background: $color;
+    }
     display: block;
     position: relative;
 
     &:hover {
       background: $color-hover;
-      @if $left {
-        &:before {
-          border-right-color: $color-hover;
-        }
-      }
-      @if $right {
-        &:after {
-          border-left-color: $color-hover;
-        }
+
+      &:#{$border-to-pseudoelement} {
+        border-#{map_get($border-and-direction-inverse-map, $border)}-color: $color-hover;
       }
     }
 
-    &:before, &:after {
+    &:#{$border-to-pseudoelement} {
       content: '';
       position: absolute;
     }
 
     $factor: 100px;
-    @if $top or $bottom {
-      $factor: $factor * 10;
+    @if $border == top or $border == bottom {
+      $factor: $factor * 15;
     }
     $border-transparent-width: $angle*$factor;
     $border-visible-width: round($border-transparent-width/cot($angle*1deg));
 
-    @if $top {
-      &:before {
-        border-bottom: $border-visible-width solid $color;
-        border-#{map_get($direction-to-border-map, $top)}: $border-transparent-width solid transparent;
-        #{map_get($direction-to-border-map, $top)}: 0;
-        top: -$border-visible-width;
-      }
-    }
-    @if $right {
-      &:after {
-        border-left: $border-visible-width solid $color;
-        border-#{map_get($direction-to-border-map, $right)}: $border-transparent-width solid transparent;
-        #{map_get($direction-to-border-map, $right)}: 0;
-        right: -$border-visible-width;
-      }
-    }
-    @if $bottom {
-      &:after {
-        border-top: $border-visible-width solid $color;
-        border-#{map_get($direction-to-border-map, $bottom)}: $border-transparent-width solid transparent;
-        #{map_get($direction-to-border-map, $bottom)}: 0;
-        bottom: -$border-visible-width;
-      }
-    }
-    @if $left {
-      &:before {
-        border-right: $border-visible-width solid $color;
-        border-#{map_get($direction-to-border-map, $left)}: $border-transparent-width solid transparent;
-        #{map_get($direction-to-border-map, $left)}: 0;
-        left: -$border-visible-width;
-      }
+    &:#{$border-to-pseudoelement} {
+      border-#{map_get($border-and-direction-inverse-map, $border)}: $border-visible-width solid $color;
+      border-#{map_get($border-and-direction-inverse-map, $direction)}: $border-transparent-width solid transparent;
+      #{$border}: -$border-visible-width;
+      #{map_get($border-and-direction-inverse-map, $direction)}: 0;
     }
   }
 }
