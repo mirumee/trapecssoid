@@ -4,51 +4,35 @@ $body-bg: #ECF0F1;
 @import 'mathsass/dist/math';
 @import 'trapecssoid';
 
-@each $angle in (30, 45, 60) {
-  $border-transparent-width: $angle*100px;
-  $border-visible-width: round($border-transparent-width/cot($angle*1deg));
-  .trapecssoid-#{$angle}-left-top:before {
-    border-right: $border-visible-width solid lightgrey;
-    border-bottom: $border-transparent-width solid transparent;
-    bottom: 0;
-    left: -$border-visible-width;
-  }
+body {
+  overflow-x: hidden;
+}
 
-  .trapecssoid-#{$angle}-left-bottom:before {
-    border-right: $border-visible-width solid lightgrey;
-    border-top: $border-transparent-width solid transparent;
-    top: 0;
-    left: -$border-visible-width;
-  }
+.title {
+  margin: 0;
+  @include trapecssoid(left, top, 15, #2C3E50);
+  @include trapecssoid(bottom, right, 2, #2C3E50, $second: true);
+  margin-bottom: $grid-gutter-width/2;
 
-  .trapecssoid-#{$angle}-right-top:after {
-    border-left: $border-visible-width solid lightgrey;
-    border-bottom: $border-transparent-width solid transparent;
-    bottom: 0;
-    right: -$border-visible-width;
-  }
-
-  .trapecssoid-#{$angle}-right-bottom:after {
-    border-left: $border-visible-width solid lightgrey;
-    border-top: $border-transparent-width solid transparent;
-    top: 0;
-    right: -$border-visible-width;
+  > div {
+    color: white;
+    padding: $grid-gutter-width;
   }
 }
 
 .menu {
   @include list-unstyled;
-  margin-left: $grid-gutter-width/-2;
 
   &-item {
     float: left;
-    padding: $grid-gutter-width/2;
+    padding: $grid-gutter-width/2 0 $grid-gutter-width;
     width: 33.33%;
 
     $colors: (#3498DB, #9B59B6, #F39C12);
     @each $color in $colors {
       &-trapecssoid--#{index($colors, $color)} {
-        @include trapecssoid($left: top, $right: bottom, $angle: 30, $color: $color, $color-hover: darken($color, 10%), $child-selector: span);
+        @include trapecssoid($border: left, $direction: top, $angle: 30, $color: $color, $color-hover: darken($color, 10%), $child-selector: span);
+        @include trapecssoid($border: right, $direction: bottom, $angle: 30, $color: $color, $color-hover: darken($color, 10%), $child-selector: span, $second: true);
       }
     }
 
@@ -56,13 +40,38 @@ $body-bg: #ECF0F1;
       color: white;
       font-size: $font-size-large;
       display: block;
-      padding: $grid-gutter-width/2;
+      padding: $grid-gutter-width/2 $grid-gutter-width;
       text-decoration: none;
     }
   }
 }
 
-.hero {
+.col-sm-4-full {
+  @include make-sm-column(4, 0);
+}
+
+.intro {
+  color: white;
+
+  > div {
+    padding: $grid-gutter-width;
+  }
+}
+
+.fun-to-use {
+  @include trapecssoid(right, bottom, 3, #F1C40F);
+}
+
+.two-borders {
+  @include trapecssoid(left, top, 3, #F39C12);
+  @include trapecssoid(right, top, 8, #F39C12, $second: true);
+}
+
+.irregular {
+  @include trapecssoid(left, bottom, 8, #E67E22);
+}
+
+.example {
   color: white;
   text-align: justify;
 
@@ -71,18 +80,27 @@ $body-bg: #ECF0F1;
   }
 }
 
-.hero-1 {
-  @include trapecssoid($top: left, $bottom: right, $angle: 2, $color: #34495E, $margin: 39px);
+.example-1 {
+  @include trapecssoid($border: top, $direction: left, $angle: 1, $color: #34495E, $gap: 40px);
+  @include trapecssoid($border: bottom, $direction: right, $angle: 3, $color: #34495E, $gap: 59px, $second: true);
+  margin-top: $grid-gutter-width;
 }
 
-.hero-2 {
-  @include trapecssoid($top: left, $bottom: left, $angle: 2, $color: #8E44AD, $margin: 39px);
+.example-2 {
+  @include trapecssoid($border: top, $direction: left, $angle: 3, $color: #8E44AD, $gap: 59px);
+  @include trapecssoid($border: bottom, $direction: left, $angle: 1, $color: #8E44AD, $gap: 19px, $second: true);
 }
 
-.hero-3 {
-  @include trapecssoid($top: right, $bottom: right, $angle: 2, $color: #2980B9, $margin: 39px);
+.example-3 {
+  @include trapecssoid($border: top, $direction: right, $angle: 1, $color: #2980B9, $gap: 19px);
+  @include trapecssoid($border: bottom, $direction: right, $angle: 8, $color: #2980B9, $gap: 160px, $second: true);
 }
 
-.hero-4 {
-  @include trapecssoid($top: left, $bottom: right, $angle: 2, $color: #C0392B, $margin: 39px);
+.example-4 {
+  @include trapecssoid($border: top, $direction: left, $angle: 8, $color: #C0392B, $gap: 140px);
+  @include trapecssoid($border: right, $direction: bottom, $angle: 82, $color: #C0392B, $gap: 539px, $second: true);
+
+  .example-in {
+    padding-top: 0;
+  }
 }

@@ -1,27 +1,42 @@
-include variables
 doctype html
 html(lang='en')
     head
         meta(charset='UTF-8')
-        title=TrapeCSSoid demo
+        title TrapeCSSoid demo
         link(rel='stylesheet', href='static/style.css')
     body
         div.container
             div.row
                 div.col-xs-12
-                    h1 TrapeCSSoid demo
+                    h1.title
+                        div TrapeCSSoid demo
                     ul.menu
                         each i in [1, 2, 3]
                             li.menu-item
                                 div(class='menu-item-trapecssoid--'+i)
                                     span
                                         a(href='#') Menu option #{i}
+            div.row-fluid
+                div.col-sm-4-full
+                    div(class='intro fun-to-use')
+                        div
+                            h2 Fun to use
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada ultricies turpis in imperdiet. Integer tempus elit eu libero varius sagittis. Aenean eget elit ut sapien semper feugiat. Nullam in felis sit amet erat lacinia semper in et ex.
+                div.col-sm-4-full
+                    div(class='intro two-borders')
+                        div
+                            h2 Use it on any border
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada ultricies turpis in imperdiet. Integer tempus elit eu libero varius sagittis. Aenean eget elit ut sapien semper feugiat. Nullam in felis sit amet erat lacinia semper in et ex.
+                div.col-sm-4-full
+                    div(class='intro irregular')
+                        div
+                            h2 Angles can be different
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada ultricies turpis in imperdiet. Integer tempus elit eu libero varius sagittis. Aenean eget elit ut sapien semper feugiat. Nullam in felis sit amet erat lacinia semper in et ex.
+            div.row
+                div.col-xs-12
                     each i in [1, 2, 3, 4]
-                        div(class=['hero', 'hero-'+i])
+                        div(class=['example', 'example-'+i])
                             div
-                                div.hero-in
-                                    h2 Yay! It works both ways ;)
+                                div.example-in
+                                    h2 Horizontal example
                                     p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada ultricies turpis in imperdiet. Integer tempus elit eu libero varius sagittis. Aenean eget elit ut sapien semper feugiat. Nullam in felis sit amet erat lacinia semper in et ex. Nullam non nisl ac est tempus finibus non et libero. Integer eu dui velit. Aenean ultrices diam sed magna lacinia laoreet. Nulla dolor purus, egestas sit amet felis vel, luctus porttitor turpis. Suspendisse fermentum est nec maximus ultricies. Duis quis magna non turpis euismod bibendum.
-                    br
-                    br
-                    br
