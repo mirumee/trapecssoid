@@ -1,6 +1,6 @@
 @mixin trapecssoid(
-  $border: left,
-  $direction: top,
+  $border: top,
+  $slope: asc,
   $angle: 0,
   $color: transparent,
   $color-hover: $color,
@@ -13,11 +13,25 @@
   @if $second {
     $border-to-pseudoelement: after;
   }
-  $border-and-direction-inverse-map: (
+  $border-inverse-map: (
     top: bottom,
     right: left,
     bottom: top,
     left: right
+  );
+  $slope-to-border-map: (
+    asc: (
+      top: left,
+      right: bottom,
+      bottom: right,
+      left: top
+    ),
+    desc: (
+      top: right,
+      right: top,
+      bottom: left,
+      left: bottom
+    )
   );
   margin-#{$border}: -$gap;
   overflow: hidden;
@@ -34,7 +48,7 @@
       background: $color-hover;
 
       &:#{$border-to-pseudoelement} {
-        border-#{map_get($border-and-direction-inverse-map, $border)}-color: $color-hover;
+        border-#{map_get($border-inverse-map, $border)}-color: $color-hover;
       }
     }
 
@@ -51,10 +65,10 @@
     $border-visible-width: round($border-transparent-width/cot($angle*1deg));
 
     &:#{$border-to-pseudoelement} {
-      border-#{map_get($border-and-direction-inverse-map, $border)}: $border-visible-width solid $color;
-      border-#{map_get($border-and-direction-inverse-map, $direction)}: $border-transparent-width solid transparent;
+      border-#{map_get($border-inverse-map, $border)}: $border-visible-width solid $color;
+      border-#{map_get(map_get($slope-to-border-map, $slope), $border)}: $border-transparent-width solid transparent;
       #{$border}: -$border-visible-width;
-      #{map_get($border-and-direction-inverse-map, $direction)}: 0;
+      #{map_get(map_get($slope-to-border-map, $slope), $border)}: 0;
     }
   }
 }
