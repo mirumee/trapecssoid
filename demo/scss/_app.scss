@@ -10,8 +10,8 @@ body {
 
 .title {
   margin: 0;
-  @include trapecssoid(left, top, 15, #2C3E50);
-  @include trapecssoid(bottom, right, 2, #2C3E50, $second: true);
+  @include trapecssoid(left, desc, 15, #2C3E50);
+  @include trapecssoid(bottom, desc, 2, #2C3E50, $second: true);
   margin-bottom: $grid-gutter-width/2;
 
   > div {
@@ -31,8 +31,8 @@ body {
     $colors: (#3498DB, #9B59B6, #F39C12);
     @each $color in $colors {
       &-trapecssoid--#{index($colors, $color)} {
-        @include trapecssoid($border: left, $direction: top, $angle: 30, $color: $color, $color-hover: darken($color, 10%), $child-selector: span);
-        @include trapecssoid($border: right, $direction: bottom, $angle: 30, $color: $color, $color-hover: darken($color, 10%), $child-selector: span, $second: true);
+        @include trapecssoid($border: left, $slope: desc, $angle: 30, $color: $color, $color-hover: darken($color, 10%), $child-selector: span);
+        @include trapecssoid($border: right, $slope: desc, $angle: 30, $color: $color, $color-hover: darken($color, 10%), $child-selector: span, $second: true);
       }
     }
 
@@ -59,16 +59,16 @@ body {
 }
 
 .fun-to-use {
-  @include trapecssoid(right, bottom, 3, #F1C40F);
+  @include trapecssoid(right, desc, 3, #F1C40F);
 }
 
 .two-borders {
-  @include trapecssoid(left, top, 3, #F39C12);
-  @include trapecssoid(right, top, 8, #F39C12, $second: true);
+  @include trapecssoid(left, desc, 3, #F39C12);
+  @include trapecssoid(right, asc, 8, #F39C12, $second: true);
 }
 
 .irregular {
-  @include trapecssoid(left, bottom, 8, #E67E22);
+  @include trapecssoid(left, asc, 8, #E67E22);
 }
 
 .example {
@@ -81,24 +81,24 @@ body {
 }
 
 .example-1 {
-  @include trapecssoid($border: top, $direction: left, $angle: 1, $color: #34495E, $gap: 40px);
-  @include trapecssoid($border: bottom, $direction: right, $angle: 3, $color: #34495E, $gap: 59px, $second: true);
+  @include trapecssoid($border: top, $slope: desc, $angle: 1, $color: #34495E, $gap: 40px);
+  @include trapecssoid($border: bottom, $slope: desc, $angle: 3, $color: #34495E, $gap: 59px, $second: true);
   margin-top: $grid-gutter-width;
 }
 
 .example-2 {
-  @include trapecssoid($border: top, $direction: left, $angle: 3, $color: #8E44AD, $gap: 59px);
-  @include trapecssoid($border: bottom, $direction: left, $angle: 1, $color: #8E44AD, $gap: 19px, $second: true);
+  @include trapecssoid($border: top, $slope: desc, $angle: 3, $color: #8E44AD, $gap: 59px);
+  @include trapecssoid($border: bottom, $slope: asc, $angle: 1, $color: #8E44AD, $gap: 19px, $second: true);
 }
 
 .example-3 {
-  @include trapecssoid($border: top, $direction: right, $angle: 1, $color: #2980B9, $gap: 19px);
-  @include trapecssoid($border: bottom, $direction: right, $angle: 8, $color: #2980B9, $gap: 160px, $second: true);
+  @include trapecssoid($border: top, $slope: asc, $angle: 1, $color: #2980B9, $gap: 19px);
+  @include trapecssoid($border: bottom, $slope: desc, $angle: 8, $color: #2980B9, $gap: 160px, $second: true);
 }
 
 .example-4 {
-  @include trapecssoid($border: top, $direction: left, $angle: 8, $color: #C0392B, $gap: 140px);
-  @include trapecssoid($border: right, $direction: bottom, $angle: 82, $color: #C0392B, $gap: 539px, $second: true);
+  @include trapecssoid($border: top, $slope: desc, $angle: 8, $color: #C0392B, $gap: 140px);
+  @include trapecssoid($border: right, $slope: desc, $angle: 82, $color: #C0392B, $gap: 539px, $second: true);
 
   .example-in {
     padding-top: 0;
