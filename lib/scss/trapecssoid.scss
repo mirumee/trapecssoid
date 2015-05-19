@@ -7,45 +7,64 @@
   $child-selector: div,
   $gap: 50px,
   $second: false,
-  $child-background: true
+  $child-background: true,
+  $inset: false
 ) {
   $border-to-pseudoelement: before;
   @if $second {
     $border-to-pseudoelement: after;
   }
   $border-inverse-map: (
-    top: bottom,
-    right: left,
-    bottom: top,
-    left: right
+          top: bottom,
+          right: left,
+          bottom: top,
+          left: right
   );
   $slope-to-border-map: (
-    asc: (
-      top: left,
-      right: bottom,
-      bottom: right,
-      left: top
-    ),
-    desc: (
-      top: right,
-      right: top,
-      bottom: left,
-      left: bottom
-    )
+          asc: (
+                  top: left,
+                  right: bottom,
+                  bottom: right,
+                  left: top
+          ),
+          desc: (
+                  top: right,
+                  right: top,
+                  bottom: left,
+                  left: bottom
+          )
   );
-  margin-#{$border}: -$gap;
+  $slope-to-inset-border-map: (
+          asc: (
+                  top: right,
+                  right: top,
+                  bottom: left,
+                  left: bottom
+          ),
+          desc: (
+                  top: left,
+                  right: bottom,
+                  bottom: right,
+                  left: top
+          )
+  );
+  @if not $inset {
+    margin-#{$border}: -$gap;
+    padding-#{$border}: $gap;
+  }
   overflow: hidden;
-  padding-#{$border}: $gap;
 
   > #{$child-selector} {
-    @if $child-background {
+    @if $child-background and not $inset {
       background: $color;
     }
     display: block;
     position: relative;
 
     &:hover {
-      background: $color-hover;
+      @if not $inset {
+        background: $color-hover;
+      }
 
       &:#{$border-to-pseudoelement} {
         border-#{map_get($border-inverse-map, $border)}-color: $color-hover;
@@ -64,11 +83,20 @@
     $border-transparent-width: $angle*$factor;
     $border-visible-width: round($border-transparent-width/cot($angle*1deg));
 
-    &:#{$border-to-pseudoelement} {
-      border-#{map_get($border-inverse-map, $border)}: $border-visible-width solid $color;
-      border-#{map_get(map_get($slope-to-border-map, $slope), $border)}: $border-transparent-width solid transparent;
-      #{$border}: -$border-visible-width;
-      #{map_get(map_get($slope-to-border-map, $slope), $border)}: 0;
+    @if $inset {
+      &:#{$border-to-pseudoelement} {
+        border-#{$border}: $border-visible-width solid $color;
+        border-#{map_get(map_get($slope-to-inset-border-map, $slope), $border)}: $border-transparent-width solid transparent;
+        #{$border}: 0;
+        #{map_get(map_get($slope-to-inset-border-map, $slope), $border)}: 0;
+      }
+    } @else {
+      &:#{$border-to-pseudoelement} {
+        border-#{map_get($border-inverse-map, $border)}: $border-visible-width solid $color;
+        border-#{map_get(map_get($slope-to-border-map, $slope), $border)}: $border-transparent-width solid transparent;
+        #{$border}: -$border-visible-width;
+        #{map_get(map_get($slope-to-border-map, $slope), $border)}: 0;
+      }
     }
   }
 }
