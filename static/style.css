@@ -4909,11 +4909,11 @@ body {
 .title {
   margin: 0;
   margin-left: -50px;
-  overflow: hidden;
   padding-left: 50px;
-  margin-bottom: -50px;
   overflow: hidden;
+  margin-bottom: -50px;
   padding-bottom: 50px;
+  overflow: hidden;
   margin-bottom: 15px; }
   .title > div {
     background: #2C3E50;
@@ -4960,11 +4960,11 @@ body {
     width: 33.33%; }
     .menu-item-trapecssoid--1 {
       margin-left: -50px;
-      overflow: hidden;
       padding-left: 50px;
-      margin-right: -50px;
       overflow: hidden;
-      padding-right: 50px; }
+      margin-right: -50px;
+      padding-right: 50px;
+      overflow: hidden; }
       .menu-item-trapecssoid--1 > span {
         background: #3498DB;
         display: block;
@@ -4999,11 +4999,11 @@ body {
           top: 0; }
     .menu-item-trapecssoid--2 {
       margin-left: -50px;
-      overflow: hidden;
       padding-left: 50px;
-      margin-right: -50px;
       overflow: hidden;
-      padding-right: 50px; }
+      margin-right: -50px;
+      padding-right: 50px;
+      overflow: hidden; }
       .menu-item-trapecssoid--2 > span {
         background: #9B59B6;
         display: block;
@@ -5038,11 +5038,11 @@ body {
           top: 0; }
     .menu-item-trapecssoid--3 {
       margin-left: -50px;
-      overflow: hidden;
       padding-left: 50px;
-      margin-right: -50px;
       overflow: hidden;
-      padding-right: 50px; }
+      margin-right: -50px;
+      padding-right: 50px;
+      overflow: hidden; }
       .menu-item-trapecssoid--3 > span {
         background: #F39C12;
         display: block;
@@ -5093,14 +5093,15 @@ body {
       width: 33.3333333333%; } }
 
 .intro {
-  color: white; }
+  color: white;
+  margin-bottom: 15px; }
   .intro > div {
     padding: 30px; }
 
 .fun-to-use {
   margin-right: -50px;
-  overflow: hidden;
-  padding-right: 50px; }
+  padding-right: 50px;
+  overflow: hidden; }
   .fun-to-use > div {
     background: #F1C40F;
     display: block;
@@ -5120,11 +5121,11 @@ body {
 
 .two-borders {
   margin-left: -50px;
-  overflow: hidden;
   padding-left: 50px;
-  margin-right: -50px;
   overflow: hidden;
-  padding-right: 50px; }
+  margin-right: -50px;
+  padding-right: 50px;
+  overflow: hidden; }
   .two-borders > div {
     background: #F39C12;
     display: block;
@@ -5160,8 +5161,8 @@ body {
 
 .irregular {
   margin-left: -50px;
-  overflow: hidden;
-  padding-left: 50px; }
+  padding-left: 50px;
+  overflow: hidden; }
   .irregular > div {
     background: #E67E22;
     display: block;
@@ -5179,20 +5180,57 @@ body {
       left: -112px;
       top: 0; }
 
+.background-image {
+  overflow: hidden;
+  overflow: hidden;
+  background: url("https://placekitten.com/g/1000/300") no-repeat;
+  background-size: cover;
+  color: white; }
+  .background-image > div {
+    display: block;
+    position: relative; }
+    .background-image > div:hover:before {
+      border-right-color: #ECF0F1; }
+    .background-image > div:before {
+      content: '';
+      position: absolute; }
+    .background-image > div:before {
+      border-left: 402px solid #ECF0F1;
+      border-top: 1500px solid transparent;
+      left: 0;
+      top: 0; }
+  .background-image > div {
+    display: block;
+    position: relative; }
+    .background-image > div:hover:after {
+      border-left-color: #ECF0F1; }
+    .background-image > div:after {
+      content: '';
+      position: absolute; }
+    .background-image > div:after {
+      border-right: 19232px solid #ECF0F1;
+      border-bottom: 7000px solid transparent;
+      right: 0;
+      bottom: 0; }
+  .background-image > div {
+    padding: 30px 60px; }
+
 .example {
   color: white;
+  position: relative;
   text-align: justify; }
   .example-in {
     padding: 10px 30px; }
 
 .example-1 {
   margin-top: -40px;
-  overflow: hidden;
   padding-top: 40px;
-  margin-bottom: -59px;
   overflow: hidden;
+  margin-bottom: -59px;
   padding-bottom: 59px;
-  margin-top: 30px; }
+  overflow: hidden;
+  margin-top: 30px;
+  z-index: 2; }
   .example-1 > div {
     background: #34495E;
     display: block;
@@ -5227,52 +5265,46 @@ body {
       left: 0; }
 
 .example-2 {
-  margin-top: -59px;
   overflow: hidden;
-  padding-top: 59px;
-  margin-bottom: -19px;
   overflow: hidden;
-  padding-bottom: 19px; }
+  background: url("https://placekitten.com/g/1000/300") no-repeat;
+  background-size: cover;
+  z-index: 1; }
   .example-2 > div {
-    background: #8E44AD;
     display: block;
     position: relative; }
-    .example-2 > div:hover {
-      background: #8E44AD; }
-      .example-2 > div:hover:before {
-        border-bottom-color: #8E44AD; }
+    .example-2 > div:hover:before {
+      border-bottom-color: #ECF0F1; }
     .example-2 > div:before {
       content: '';
       position: absolute; }
     .example-2 > div:before {
-      border-bottom: 236px solid #8E44AD;
-      border-right: 4500px solid transparent;
-      top: -236px;
-      right: 0; }
+      border-top: 236px solid #ECF0F1;
+      border-left: 4500px solid transparent;
+      top: 0;
+      left: 0; }
   .example-2 > div {
-    background: #8E44AD;
     display: block;
     position: relative; }
-    .example-2 > div:hover {
-      background: #8E44AD; }
-      .example-2 > div:hover:after {
-        border-top-color: #8E44AD; }
+    .example-2 > div:hover:after {
+      border-top-color: #ECF0F1; }
     .example-2 > div:after {
       content: '';
       position: absolute; }
     .example-2 > div:after {
-      border-top: 26px solid #8E44AD;
-      border-right: 1500px solid transparent;
-      bottom: -26px;
-      right: 0; }
+      border-bottom: 26px solid #ECF0F1;
+      border-left: 1500px solid transparent;
+      bottom: 0;
+      left: 0; }
 
 .example-3 {
   margin-top: -19px;
-  overflow: hidden;
   padding-top: 19px;
-  margin-bottom: -160px;
   overflow: hidden;
-  padding-bottom: 160px; }
+  margin-bottom: -160px;
+  padding-bottom: 160px;
+  overflow: hidden;
+  z-index: 2; }
   .example-3 > div {
     background: #2980B9;
     display: block;
@@ -5308,40 +5340,40 @@ body {
 
 .example-4 {
   margin-top: -140px;
-  overflow: hidden;
   padding-top: 140px;
-  margin-right: -539px;
   overflow: hidden;
-  padding-right: 539px; }
+  margin-right: -539px;
+  padding-right: 539px;
+  overflow: hidden; }
   .example-4 > div {
-    background: #C0392B;
+    background: #8E44AD;
     display: block;
     position: relative; }
     .example-4 > div:hover {
-      background: #C0392B; }
+      background: #8E44AD; }
       .example-4 > div:hover:before {
-        border-bottom-color: #C0392B; }
+        border-bottom-color: #8E44AD; }
     .example-4 > div:before {
       content: '';
       position: absolute; }
     .example-4 > div:before {
-      border-bottom: 1686px solid #C0392B;
+      border-bottom: 1686px solid #8E44AD;
       border-right: 12000px solid transparent;
       top: -1686px;
       right: 0; }
   .example-4 > div {
-    background: #C0392B;
+    background: #8E44AD;
     display: block;
     position: relative; }
     .example-4 > div:hover {
-      background: #C0392B; }
+      background: #8E44AD; }
       .example-4 > div:hover:after {
-        border-left-color: #C0392B; }
+        border-left-color: #8E44AD; }
     .example-4 > div:after {
       content: '';
       position: absolute; }
     .example-4 > div:after {
-      border-left: 58346px solid #C0392B;
+      border-left: 58346px solid #8E44AD;
       border-top: 8200px solid transparent;
       right: -58346px;
       top: 0; }

@@ -52,6 +52,7 @@ body {
 
 .intro {
   color: white;
+  margin-bottom: $grid-gutter-width/2;
 
   > div {
     padding: $grid-gutter-width;
@@ -71,8 +72,21 @@ body {
   @include trapecssoid(left, asc, 8, #E67E22);
 }
 
+.background-image {
+  @include trapecssoid(left, desc, 15, $body-bg, $inset: true);
+  @include trapecssoid(right, desc, 70, $body-bg, $second: true, $inset: true);
+  background: url("https://placekitten.com/g/1000/300") no-repeat;
+  background-size: cover;
+  color: white;
+
+  > div {
+    padding: $grid-gutter-width $grid-gutter-width*2;
+  }
+}
+
 .example {
   color: white;
+  position: relative;
   text-align: justify;
 
   &-in {
@@ -84,21 +98,26 @@ body {
   @include trapecssoid($border: top, $slope: desc, $angle: 1, $color: #34495E, $gap: 40px);
   @include trapecssoid($border: bottom, $slope: desc, $angle: 3, $color: #34495E, $gap: 59px, $second: true);
   margin-top: $grid-gutter-width;
+  z-index: 2;
 }
 
 .example-2 {
-  @include trapecssoid($border: top, $slope: desc, $angle: 3, $color: #8E44AD, $gap: 59px);
-  @include trapecssoid($border: bottom, $slope: asc, $angle: 1, $color: #8E44AD, $gap: 19px, $second: true);
+  @include trapecssoid($border: top, $slope: desc, $angle: 3, $color: $body-bg, $inset: true);
+  @include trapecssoid($border: bottom, $slope: asc, $angle: 1, $color: $body-bg, $inset: true, $second: true);
+  background: url("https://placekitten.com/g/1000/300") no-repeat;
+  background-size: cover;
+  z-index: 1;
 }
 
 .example-3 {
   @include trapecssoid($border: top, $slope: asc, $angle: 1, $color: #2980B9, $gap: 19px);
   @include trapecssoid($border: bottom, $slope: desc, $angle: 8, $color: #2980B9, $gap: 160px, $second: true);
+  z-index: 2;
 }
 
 .example-4 {
-  @include trapecssoid($border: top, $slope: desc, $angle: 8, $color: #C0392B, $gap: 140px);
-  @include trapecssoid($border: right, $slope: desc, $angle: 82, $color: #C0392B, $gap: 539px, $second: true);
+  @include trapecssoid($border: top, $slope: desc, $angle: 8, $color: #8E44AD, $gap: 140px);
+  @include trapecssoid($border: right, $slope: desc, $angle: 82, $color: #8E44AD, $gap: 539px, $second: true);
 
   .example-in {
     padding-top: 0;
