@@ -9,8 +9,8 @@ body {
 
 .title {
   margin: 0;
-  @include trapecssoid(left, desc, 15, #2C3E50);
-  @include trapecssoid(bottom, desc, 2, #2C3E50, $second: true);
+  @include trapecssoid(left, top, 15, #2C3E50);
+  @include trapecssoid(bottom, right, 2, #2C3E50, $second: true);
   margin-bottom: $grid-gutter-width/2;
 
   > div {
@@ -30,8 +30,8 @@ body {
     $colors: (#3498DB, #9B59B6, #F39C12);
     @each $color in $colors {
       &-trapecssoid--#{index($colors, $color)} {
-        @include trapecssoid($border: left, $slope: desc, $angle: 30, $color: $color, $color-hover: darken($color, 10%), $child-selector: span);
-        @include trapecssoid($border: right, $slope: desc, $angle: 30, $color: $color, $color-hover: darken($color, 10%), $child-selector: span, $second: true);
+        @include trapecssoid($border: left, $peak: top, $angle: 30, $color: $color, $color-hover: darken($color, 10%), $child-selector: span);
+        @include trapecssoid($border: right, $peak: bottom, $angle: 30, $color: $color, $color-hover: darken($color, 10%), $child-selector: span, $second: true);
       }
     }
 
@@ -59,21 +59,21 @@ body {
 }
 
 .fun-to-use {
-  @include trapecssoid(right, desc, 3, #F1C40F);
+  @include trapecssoid(right, bottom, 3, #F1C40F);
 }
 
 .two-borders {
-  @include trapecssoid(left, desc, 3, #F39C12);
-  @include trapecssoid(right, asc, 8, #F39C12, $second: true);
+  @include trapecssoid(left, top, 3, #F39C12);
+  @include trapecssoid(right, top, 8, #F39C12, $second: true);
 }
 
 .irregular {
-  @include trapecssoid(left, asc, 8, #E67E22);
+  @include trapecssoid(left, bottom, 8, #E67E22);
 }
 
 .background-image {
-  @include trapecssoid(left, desc, 15, $body-bg, $inset: true);
-  @include trapecssoid(right, desc, 70, $body-bg, $second: true, $inset: true);
+  @include trapecssoid(left, top, 15, $body-bg, $inset: true);
+  @include trapecssoid(right, bottom, 70, $body-bg, $second: true, $inset: true);
   background: url("https://placekitten.com/g/1000/300") no-repeat;
   background-size: cover;
   color: white;
@@ -94,29 +94,29 @@ body {
 }
 
 .example-1 {
-  @include trapecssoid($border: top, $slope: desc, $angle: 1, $color: #34495E, $gap: 40px);
-  @include trapecssoid($border: bottom, $slope: desc, $angle: 3, $color: #34495E, $gap: 59px, $second: true);
+  @include trapecssoid($border: top, $peak: left, $angle: 1, $color: #34495E, $gap: 40px);
+  @include trapecssoid($border: bottom, $peak: right, $angle: 3, $color: #34495E, $gap: 59px, $second: true);
   margin-top: $grid-gutter-width;
   z-index: 2;
 }
 
 .example-2 {
-  @include trapecssoid($border: top, $slope: desc, $angle: 3, $color: $body-bg, $inset: true);
-  @include trapecssoid($border: bottom, $slope: asc, $angle: 1, $color: $body-bg, $inset: true, $second: true);
+  @include trapecssoid($border: top, $peak: left, $angle: 3, $color: $body-bg, $inset: true);
+  @include trapecssoid($border: bottom, $peak: left, $angle: 1, $color: $body-bg, $inset: true, $second: true);
   background: url("https://placekitten.com/g/1000/300") no-repeat;
   background-size: cover;
   z-index: 1;
 }
 
 .example-3 {
-  @include trapecssoid($border: top, $slope: asc, $angle: 1, $color: #2980B9, $gap: 19px);
-  @include trapecssoid($border: bottom, $slope: desc, $angle: 8, $color: #2980B9, $gap: 160px, $second: true);
+  @include trapecssoid($border: top, $peak: right, $angle: 1, $color: #2980B9, $gap: 19px);
+  @include trapecssoid($border: bottom, $peak: right, $angle: 8, $color: #2980B9, $gap: 160px, $second: true);
   z-index: 2;
 }
 
 .example-4 {
-  @include trapecssoid($border: top, $slope: desc, $angle: 8, $color: #8E44AD, $gap: 140px);
-  @include trapecssoid($border: right, $slope: desc, $angle: 82, $color: #8E44AD, $gap: 539px, $second: true);
+  @include trapecssoid($border: top, $peak: left, $angle: 8, $color: #8E44AD, $gap: 140px);
+  @include trapecssoid($border: right, $peak: bottom, $angle: 82, $color: #8E44AD, $gap: 539px, $second: true);
 
   .example-in {
     padding-top: 0;

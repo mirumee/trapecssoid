@@ -28,7 +28,7 @@ Use the mixin:
 
 ```scss
 .trapecssoid {
-    @include trapecssoid($border: left, $slope: desc, $angle: 15, $color: #3498DB);
+    @include trapecssoid($border: left, $peak: top, $angle: 15, $color: #3498DB);
 }
 ```
 
@@ -46,8 +46,8 @@ Some other examples:
 
 ```scss
 .trapecssoid {
-    @include trapecssoid($border: left, $slope: desc, $angle: 15, $color: #E67E22, $color-hover: lighten(#E67E22, 10%), $child-selector: span);
-    @include trapecssoid($border: right, $slope: desc, $angle: 15, $color: #E67E22, $color-hover: lighten(#E67E22, 10%), $child-selector: span, $second: true);
+    @include trapecssoid(left, top, 15, #E67E22, $color-hover: lighten(#E67E22, 10%), $child-selector: span);
+    @include trapecssoid(right, bottom, 15, #E67E22, lighten(#E67E22, 10%), span, $second: true);
 }
 ```
 
@@ -61,8 +61,8 @@ Some other examples:
 
 ```scss
 .trapecssoid {
-    @include trapecssoid($border: top, $slope: desc, $angle: 3, $color: white, $inset: true);
-    @include trapecssoid($border: bottom, $slope: asc, $angle: 1, $color: white, $inset: true, $second: true);
+    @include trapecssoid(top, left, 3, white, $inset: true);
+    @include trapecssoid(bottom, left, 1, white, $inset: true, $second: true);
     background: url("https://placekitten.com/g/1000/300") no-repeat;
     background-size: cover;
 }
