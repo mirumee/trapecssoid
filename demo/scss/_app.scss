@@ -72,8 +72,10 @@ body {
 }
 
 .background-image {
-  @include trapecssoid(left, top, 15, $body-bg, $inset: true);
-  @include trapecssoid(right, bottom, 70, $body-bg, $second: true, $inset: true);
+  @include trapecssoid(left, top, 12, $body-bg, $inset: true);
+  @media (min-width: $grid-float-breakpoint) {
+    @include trapecssoid(right, bottom, 70, $body-bg, $second: true, $inset: true);
+  }
   background: url("https://placekitten.com/g/1000/300") no-repeat;
   background-size: cover;
   color: white;
@@ -110,13 +112,14 @@ body {
 
 .example-3 {
   @include trapecssoid($border: top, $peak: right, $angle: 1, $color: #2980B9, $gap: 19px);
-  @include trapecssoid($border: bottom, $peak: right, $angle: 8, $color: #2980B9, $gap: 160px, $second: true);
+  @include trapecssoid($border: bottom, $peak: right, $angle: 9, $color: #2980B9, $gap: 180px, $second: true);
   z-index: 2;
 }
 
 .example-4 {
-  @include trapecssoid($border: top, $peak: left, $angle: 8, $color: #8E44AD, $gap: 140px);
-  @include trapecssoid($border: right, $peak: bottom, $angle: 82, $color: #8E44AD, $gap: 539px, $second: true);
+  @include trapecssoid($border: top, $peak: left, $angle: 9, $color: #8E44AD, $gap: 160px);
+  @include trapecssoid($border: right, $peak: bottom, $angle: 81, $color: #8E44AD, $gap: 539px, $second: true);
+  z-index: 3;
 
   .example-in {
     padding-top: 0;
