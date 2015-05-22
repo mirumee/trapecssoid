@@ -29,7 +29,7 @@
     "type": "git",
     "url": "git://github.com/mirumee/trapecssoid.git"
   },
-  "devDependencies": {
+  "dependencies": {
     "bootstrap-sass": "~3.3.4",
     "jquery": "~2.1.4",
     "mathsass": "~0.9.5"

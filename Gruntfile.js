@@ -14,7 +14,7 @@ module.exports = function (grunt) {
     },
     sass: {
       options: {
-        includePaths: ['bower_components', 'lib/scss']
+        includePaths: ['bower_components', 'lib']
       },
       dist: {
         files: {
