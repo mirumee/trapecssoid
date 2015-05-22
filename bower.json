@@ -1,7 +1,7 @@
 {
   "name": "TrapeCSSoid",
   "description": "CSS-based trapezoid blocks",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": [
     "lib/scss/trapecssoid.scss"
   ],
