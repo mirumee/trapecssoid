@@ -2,11 +2,21 @@
 CSS-based trapezoid blocks<br>
 **Demo: http://mirumee.github.io/trapecssoid/**
 
+Instalation
+-----------
+Via Bower:
+```shell
+bower install trapecssoid --save-dev
+```
+
 Usage
 -----
+Import mixin into your project:
 ```scss
 @import 'lib/trapecssoid';
 ```
+
+Additional wrapper around your block is needed:
 
 ```html
 <div class="trapecssoid">
@@ -14,13 +24,19 @@ Usage
 </div>
 ```
 
+Use the mixin:
+
 ```scss
 .trapecssoid {
     @include trapecssoid($border: left, $slope: desc, $angle: 15, $color: #3498DB);
 }
 ```
 
+Et voilà:
+
 ![alt text](https://raw.githubusercontent.com/mirumee/trapecssoid/master/static/usage-1.png)
+
+Some other examples:
 
 ```html
 <a href="#" class="trapecssoid">
@@ -53,3 +69,5 @@ Usage
 ```
 
 ![alt text](https://raw.githubusercontent.com/mirumee/trapecssoid/master/static/usage-3.png)
+
+More of these can be found on the **[demo](http://mirumee.github.io/trapecssoid/)** page
