@@ -4910,19 +4910,17 @@ body {
   margin: 0;
   margin-left: -50px;
   padding-left: 50px;
+  display: block;
   overflow: hidden;
   margin-bottom: -50px;
   padding-bottom: 50px;
+  display: block;
   overflow: hidden;
   margin-bottom: 15px; }
   .title > div {
     background: #2C3E50;
     display: block;
     position: relative; }
-    .title > div:hover {
-      background: #2C3E50; }
-      .title > div:hover:before {
-        border-right-color: #2C3E50; }
     .title > div:before {
       content: '';
       position: absolute; }
@@ -4935,10 +4933,6 @@ body {
     background: #2C3E50;
     display: block;
     position: relative; }
-    .title > div:hover {
-      background: #2C3E50; }
-      .title > div:hover:after {
-        border-top-color: #2C3E50; }
     .title > div:after {
       content: '';
       position: absolute; }
@@ -4961,17 +4955,19 @@ body {
     .menu-item-trapecssoid--1 {
       margin-left: -50px;
       padding-left: 50px;
+      display: block;
       overflow: hidden;
       margin-right: -50px;
       padding-right: 50px;
+      display: block;
       overflow: hidden; }
       .menu-item-trapecssoid--1 > span {
         background: #3498DB;
         display: block;
         position: relative; }
-        .menu-item-trapecssoid--1 > span:hover {
+        .menu-item-trapecssoid--1 > span:hover, .menu-item-trapecssoid--1 > span:focus {
           background: #217dbb; }
-          .menu-item-trapecssoid--1 > span:hover:before {
+          .menu-item-trapecssoid--1 > span:hover:before, .menu-item-trapecssoid--1 > span:focus:before {
             border-right-color: #217dbb; }
         .menu-item-trapecssoid--1 > span:before {
           content: '';
@@ -4985,9 +4981,9 @@ body {
         background: #3498DB;
         display: block;
         position: relative; }
-        .menu-item-trapecssoid--1 > span:hover {
+        .menu-item-trapecssoid--1 > span:hover, .menu-item-trapecssoid--1 > span:focus {
           background: #217dbb; }
-          .menu-item-trapecssoid--1 > span:hover:after {
+          .menu-item-trapecssoid--1 > span:hover:after, .menu-item-trapecssoid--1 > span:focus:after {
             border-left-color: #217dbb; }
         .menu-item-trapecssoid--1 > span:after {
           content: '';
@@ -5000,17 +4996,19 @@ body {
     .menu-item-trapecssoid--2 {
       margin-left: -50px;
       padding-left: 50px;
+      display: block;
       overflow: hidden;
       margin-right: -50px;
       padding-right: 50px;
+      display: block;
       overflow: hidden; }
       .menu-item-trapecssoid--2 > span {
         background: #9B59B6;
         display: block;
         position: relative; }
-        .menu-item-trapecssoid--2 > span:hover {
+        .menu-item-trapecssoid--2 > span:hover, .menu-item-trapecssoid--2 > span:focus {
           background: #804399; }
-          .menu-item-trapecssoid--2 > span:hover:before {
+          .menu-item-trapecssoid--2 > span:hover:before, .menu-item-trapecssoid--2 > span:focus:before {
             border-right-color: #804399; }
         .menu-item-trapecssoid--2 > span:before {
           content: '';
@@ -5024,9 +5022,9 @@ body {
         background: #9B59B6;
         display: block;
         position: relative; }
-        .menu-item-trapecssoid--2 > span:hover {
+        .menu-item-trapecssoid--2 > span:hover, .menu-item-trapecssoid--2 > span:focus {
           background: #804399; }
-          .menu-item-trapecssoid--2 > span:hover:after {
+          .menu-item-trapecssoid--2 > span:hover:after, .menu-item-trapecssoid--2 > span:focus:after {
             border-left-color: #804399; }
         .menu-item-trapecssoid--2 > span:after {
           content: '';
@@ -5039,17 +5037,19 @@ body {
     .menu-item-trapecssoid--3 {
       margin-left: -50px;
       padding-left: 50px;
+      display: block;
       overflow: hidden;
       margin-right: -50px;
       padding-right: 50px;
+      display: block;
       overflow: hidden; }
       .menu-item-trapecssoid--3 > span {
         background: #F39C12;
         display: block;
         position: relative; }
-        .menu-item-trapecssoid--3 > span:hover {
+        .menu-item-trapecssoid--3 > span:hover, .menu-item-trapecssoid--3 > span:focus {
           background: #c87f0a; }
-          .menu-item-trapecssoid--3 > span:hover:before {
+          .menu-item-trapecssoid--3 > span:hover:before, .menu-item-trapecssoid--3 > span:focus:before {
             border-right-color: #c87f0a; }
         .menu-item-trapecssoid--3 > span:before {
           content: '';
@@ -5063,9 +5063,9 @@ body {
         background: #F39C12;
         display: block;
         position: relative; }
-        .menu-item-trapecssoid--3 > span:hover {
+        .menu-item-trapecssoid--3 > span:hover, .menu-item-trapecssoid--3 > span:focus {
           background: #c87f0a; }
-          .menu-item-trapecssoid--3 > span:hover:after {
+          .menu-item-trapecssoid--3 > span:hover:after, .menu-item-trapecssoid--3 > span:focus:after {
             border-left-color: #c87f0a; }
         .menu-item-trapecssoid--3 > span:after {
           content: '';
@@ -5101,15 +5101,12 @@ body {
 .fun-to-use {
   margin-right: -50px;
   padding-right: 50px;
+  display: block;
   overflow: hidden; }
   .fun-to-use > div {
     background: #F1C40F;
     display: block;
     position: relative; }
-    .fun-to-use > div:hover {
-      background: #F1C40F; }
-      .fun-to-use > div:hover:before {
-        border-left-color: #F1C40F; }
     .fun-to-use > div:before {
       content: '';
       position: absolute; }
@@ -5122,18 +5119,16 @@ body {
 .two-borders {
   margin-left: -50px;
   padding-left: 50px;
+  display: block;
   overflow: hidden;
   margin-right: -50px;
   padding-right: 50px;
+  display: block;
   overflow: hidden; }
   .two-borders > div {
     background: #F39C12;
     display: block;
     position: relative; }
-    .two-borders > div:hover {
-      background: #F39C12; }
-      .two-borders > div:hover:before {
-        border-right-color: #F39C12; }
     .two-borders > div:before {
       content: '';
       position: absolute; }
@@ -5146,10 +5141,6 @@ body {
     background: #F39C12;
     display: block;
     position: relative; }
-    .two-borders > div:hover {
-      background: #F39C12; }
-      .two-borders > div:hover:after {
-        border-left-color: #F39C12; }
     .two-borders > div:after {
       content: '';
       position: absolute; }
@@ -5162,15 +5153,12 @@ body {
 .irregular {
   margin-left: -50px;
   padding-left: 50px;
+  display: block;
   overflow: hidden; }
   .irregular > div {
     background: #E67E22;
     display: block;
     position: relative; }
-    .irregular > div:hover {
-      background: #E67E22; }
-      .irregular > div:hover:before {
-        border-right-color: #E67E22; }
     .irregular > div:before {
       content: '';
       position: absolute; }
@@ -5181,7 +5169,9 @@ body {
       top: 0; }
 
 .background-image {
+  display: block;
   overflow: hidden;
+  display: block;
   overflow: hidden;
   background: url("https://placekitten.com/g/1000/300") no-repeat;
   background-size: cover;
@@ -5189,8 +5179,6 @@ body {
   .background-image > div {
     display: block;
     position: relative; }
-    .background-image > div:hover:before {
-      border-right-color: #ECF0F1; }
     .background-image > div:before {
       content: '';
       position: absolute; }
@@ -5202,8 +5190,6 @@ body {
   .background-image > div {
     display: block;
     position: relative; }
-    .background-image > div:hover:after {
-      border-left-color: #ECF0F1; }
     .background-image > div:after {
       content: '';
       position: absolute; }
@@ -5225,9 +5211,11 @@ body {
 .example-1 {
   margin-top: -40px;
   padding-top: 40px;
+  display: block;
   overflow: hidden;
   margin-bottom: -59px;
   padding-bottom: 59px;
+  display: block;
   overflow: hidden;
   margin-top: 30px;
   z-index: 2; }
@@ -5235,10 +5223,6 @@ body {
     background: #34495E;
     display: block;
     position: relative; }
-    .example-1 > div:hover {
-      background: #34495E; }
-      .example-1 > div:hover:before {
-        border-bottom-color: #34495E; }
     .example-1 > div:before {
       content: '';
       position: absolute; }
@@ -5251,10 +5235,6 @@ body {
     background: #34495E;
     display: block;
     position: relative; }
-    .example-1 > div:hover {
-      background: #34495E; }
-      .example-1 > div:hover:after {
-        border-top-color: #34495E; }
     .example-1 > div:after {
       content: '';
       position: absolute; }
@@ -5265,7 +5245,9 @@ body {
       left: 0; }
 
 .example-2 {
+  display: block;
   overflow: hidden;
+  display: block;
   overflow: hidden;
   background: url("https://placekitten.com/g/1000/300") no-repeat;
   background-size: cover;
@@ -5273,8 +5255,6 @@ body {
   .example-2 > div {
     display: block;
     position: relative; }
-    .example-2 > div:hover:before {
-      border-bottom-color: #ECF0F1; }
     .example-2 > div:before {
       content: '';
       position: absolute; }
@@ -5286,8 +5266,6 @@ body {
   .example-2 > div {
     display: block;
     position: relative; }
-    .example-2 > div:hover:after {
-      border-top-color: #ECF0F1; }
     .example-2 > div:after {
       content: '';
       position: absolute; }
@@ -5300,19 +5278,17 @@ body {
 .example-3 {
   margin-top: -19px;
   padding-top: 19px;
+  display: block;
   overflow: hidden;
   margin-bottom: -160px;
   padding-bottom: 160px;
+  display: block;
   overflow: hidden;
   z-index: 2; }
   .example-3 > div {
     background: #2980B9;
     display: block;
     position: relative; }
-    .example-3 > div:hover {
-      background: #2980B9; }
-      .example-3 > div:hover:before {
-        border-bottom-color: #2980B9; }
     .example-3 > div:before {
       content: '';
       position: absolute; }
@@ -5325,10 +5301,6 @@ body {
     background: #2980B9;
     display: block;
     position: relative; }
-    .example-3 > div:hover {
-      background: #2980B9; }
-      .example-3 > div:hover:after {
-        border-top-color: #2980B9; }
     .example-3 > div:after {
       content: '';
       position: absolute; }
@@ -5341,18 +5313,16 @@ body {
 .example-4 {
   margin-top: -140px;
   padding-top: 140px;
+  display: block;
   overflow: hidden;
   margin-right: -539px;
   padding-right: 539px;
+  display: block;
   overflow: hidden; }
   .example-4 > div {
     background: #8E44AD;
     display: block;
     position: relative; }
-    .example-4 > div:hover {
-      background: #8E44AD; }
-      .example-4 > div:hover:before {
-        border-bottom-color: #8E44AD; }
     .example-4 > div:before {
       content: '';
       position: absolute; }
@@ -5365,10 +5335,6 @@ body {
     background: #8E44AD;
     display: block;
     position: relative; }
-    .example-4 > div:hover {
-      background: #8E44AD; }
-      .example-4 > div:hover:after {
-        border-left-color: #8E44AD; }
     .example-4 > div:after {
       content: '';
       position: absolute; }

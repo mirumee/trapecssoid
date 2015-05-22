@@ -1,3 +1,5 @@
+@import 'mathsass/dist/math';
+
 @mixin trapecssoid(
   $border: top,
   $slope: asc,
@@ -52,6 +54,7 @@
     margin-#{$border}: -$gap;
     padding-#{$border}: $gap;
   }
+  display: block;
   overflow: hidden;
 
   > #{$child-selector} {
@@ -61,13 +64,15 @@
     display: block;
     position: relative;
 
-    &:hover {
-      @if not $inset {
-        background: $color-hover;
-      }
+    @if $color-hover != $color {
+      &:hover, &:focus {
+        @if not $inset {
+          background: $color-hover;
+        }
 
-      &:#{$border-to-pseudoelement} {
-        border-#{map_get($border-inverse-map, $border)}-color: $color-hover;
+        &:#{$border-to-pseudoelement} {
+          border-#{map_get($border-inverse-map, $border)}-color: $color-hover;
+        }
       }
     }
 
