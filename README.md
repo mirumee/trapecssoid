@@ -16,7 +16,7 @@ Usage
 
 ```scss
 .trapecssoid {
-    @include trapecssoid($border: left, $slope: desc, $angle: 15, blue);
+    @include trapecssoid($border: left, $slope: desc, $angle: 15, $color: #3498DB);
 }
 ```
 
@@ -30,8 +30,8 @@ Usage
 
 ```scss
 .trapecssoid {
-    @include trapecssoid($border: left, $slope: desc, $angle: 15, $color: blue, $color-hover: lighten(blue, 10%), $child-selector: span);
-    @include trapecssoid($border: right, $slope: desc, $angle: 15, $color: blue, $color-hover: lighten(blue, 10%), $child-selector: span, $second: true);
+    @include trapecssoid($border: left, $slope: desc, $angle: 15, $color: #E67E22, $color-hover: lighten(#E67E22, 10%), $child-selector: span);
+    @include trapecssoid($border: right, $slope: desc, $angle: 15, $color: #E67E22, $color-hover: lighten(#E67E22, 10%), $child-selector: span, $second: true);
 }
 ```
 
