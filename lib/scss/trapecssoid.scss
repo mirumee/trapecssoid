@@ -7,7 +7,7 @@
   $color: transparent,
   $color-hover: $color,
   $child-selector: div,
-  $gap: 50px,
+  $gap: 60px,
   $second: false,
   $child-background: true,
   $inset: false
@@ -53,7 +53,7 @@
       position: absolute;
     }
 
-    $factor: 100px;
+    $factor: 120px;
     @if $border == top or $border == bottom {
       $factor: $factor * 15;
     }
